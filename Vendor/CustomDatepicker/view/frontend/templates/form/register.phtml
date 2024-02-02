@@ -1,0 +1,21 @@
+<div x-data="{ customDate: '' }" x-init="() => { 
+    customDate = document.getElementById('custom_datepicker').value; 
+    flatpickr(document.getElementById('custom_datepicker'), {
+        dateFormat: 'd.m.Y',
+        prevArrow: '&#x3c;prev',
+        nextArrow: 'next&#x3e;',
+        months: ['January','February','March','April','May','Junn','July','August','September','October','November','December'],
+        weekdays: ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'],
+        shorthandCurrentMonth: true,
+    });
+}" class="field custom-date-picker">
+    <label for="custom_datepicker" class="label">
+        <span x-text="'Custom Date Picker'"></span>
+    </label>
+    <div class="control">
+        <input x-model="customDate" name="custom_datepicker" id="custom_datepicker" title="Custom Date Picker" type="text">
+    </div>
+</div>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr@4.6.9/dist/flatpickr.min.css">
+<script src="https://cdn.jsdelivr.net/npm/flatpickr@4.6.9/dist/flatpickr.min.js"></script>
